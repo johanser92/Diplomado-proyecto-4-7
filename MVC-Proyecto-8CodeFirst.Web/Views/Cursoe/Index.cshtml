@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MVC_CRUD_Proyecto_8CodeFirst.Model.Models.Curso>
+
+@{
+    ViewBag.Title = "Cursos";
+}
+
+<h2>Cursos</h2>
+
+<p>
+    <a href="/Cursoe/Create" class="btn btn-success">Crear Nuevo</a>
+  
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+
+            <a href="/Cursoe/Edit?id=@item.CursoID" class="btn btn-primary">Editar</a>
+            <a href="/Cursoe/Details?id=@item.CursoID" class="btn btn-success">Detalles</a>
+            <a href="/Cursoe/Delete?id=@item.CursoID" class="btn btn-danger">Borrar</a>
+
+        </td>
+    </tr>
+}
+
+</table>
